@@ -19,4 +19,14 @@ RSpec.describe "Tasks", type: :request do
       expect(Task.last.title).to eq("新しいタスク")
     end
   end
+  describe "GET /tasks/:id" do
+    it "指定したタスクを取得できる" do
+      task = Task.create!(title: "特定のタスク")
+  
+      get task_path(task)
+  
+      expect(response).to have_http_status(:ok)
+      expect(response.body).to include(task.title)
+    end
+  end  
 end
