@@ -29,4 +29,15 @@ RSpec.describe "Tasks", type: :request do
       expect(response.body).to include(task.title)
     end
   end
+  describe "PATCH /tasks/:id" do
+    it "指定したタスクを更新できる" do
+      task = Task.create!(title: "元のタイトル")
+      updated_params = { task: { title: "更新後のタイトル" } }
+
+      patch task_path(task), params: updated_params
+
+      expect(response).to have_http_status(:ok)
+      expect(task.reload.title).to eq("更新後のタイトル")
+    end
+  end
 end
