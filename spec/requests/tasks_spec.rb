@@ -43,11 +43,11 @@ RSpec.describe "Tasks", type: :request do
   describe "DELETE /tasks/:id" do
     it "指定したタスクを削除できる" do
       task = Task.create!(title: "削除されるタスク")
-  
+
       delete task_path(task)
-  
+
       expect(response).to have_http_status(:no_content)
       expect(Task.exists?(task.id)).to be_falsey
     end
-  end  
+  end
 end
