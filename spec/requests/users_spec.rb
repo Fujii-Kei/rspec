@@ -1,4 +1,4 @@
-#deviseを使ったログイン機能のrspecを作成する
+# deviseを使ったログイン機能のrspecを作成する
 require 'rails_helper'
 
 RSpec.describe "Users", type: :request do
