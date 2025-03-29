@@ -1,0 +1,85 @@
+<!-- ヒーローセクション -->
+<div class="bg-indigo-50">
+  <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8 text-center">
+    <h1 class="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
+      <span class="block">タスク管理を</span>
+      <span class="block text-indigo-600">シンプルに</span>
+    </h1>
+    <p class="mt-6 max-w-lg mx-auto text-xl text-gray-600">
+      日々のタスクを効率的に管理し、生産性を向上させましょう
+    </p>
+    <div class="mt-10 flex justify-center space-x-4">
+      <% if user_signed_in? %>
+        <%= link_to "タスク一覧を見る", tasks_path, class: "inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700" %>
+      <% else %>
+        <%= link_to "無料で始める", new_user_registration_path, class: "inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700" %>
+        <%= link_to "ログイン", new_user_session_path, class: "inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<!-- 特徴セクション -->
+<div class="py-16 bg-white overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="lg:text-center">
+      <h2 class="text-base text-indigo-600 font-semibold tracking-wide uppercase">特徴</h2>
+      <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+        より良いタスク管理体験を
+      </p>
+    </div>
+
+    <div class="mt-16 grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="text-center">
+        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white mx-auto">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+          </svg>
+        </div>
+        <h3 class="mt-6 text-lg font-medium text-gray-900">シンプルなインターフェース</h3>
+        <p class="mt-2 text-base text-gray-500">
+          直感的に使えるシンプルなデザインで、ストレスフリーなタスク管理
+        </p>
+      </div>
+
+      <div class="text-center">
+        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white mx-auto">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+        </div>
+        <h3 class="mt-6 text-lg font-medium text-gray-900">迅速な操作</h3>
+        <p class="mt-2 text-base text-gray-500">
+          素早くタスクを追加・編集・削除でき、作業の流れを妨げません
+        </p>
+      </div>
+
+      <div class="text-center">
+        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white mx-auto">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+          </svg>
+        </div>
+        <h3 class="mt-6 text-lg font-medium text-gray-900">安全なデータ管理</h3>
+        <p class="mt-2 text-base text-gray-500">
+          あなたのデータは安全に管理され、いつでもアクセス可能
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTAセクション -->
+<div class="bg-indigo-700">
+  <div class="max-w-2xl mx-auto text-center py-16 px-4 sm:py-20 sm:px-6 lg:px-8">
+    <h2 class="text-3xl font-extrabold text-white sm:text-4xl">
+      <span class="block">今日から始めましょう</span>
+    </h2>
+    <p class="mt-4 text-lg leading-6 text-indigo-200">
+      生産性向上の第一歩を踏み出しましょう
+    </p>
+    <% unless user_signed_in? %>
+      <%= link_to "無料登録はこちら", new_user_registration_path, class: "mt-8 w-full inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-indigo-50 sm:w-auto" %>
+    <% end %>
+  </div>
+</div>
